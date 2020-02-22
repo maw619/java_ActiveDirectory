@@ -1,0 +1,18 @@
+package com.app.dao;
+import java.sql.*;
+import com.app.db.Conexion;
+
+public class UserDaoImpl extends Conexion implements UserDAO{
+
+	@Override
+	public void addUser() {
+		String sql = "insert into users (user_first_name,user_last_name,user_email";
+		this.getConn();
+		try {
+			PreparedStatement ps = this.conn.prepareStatement(sql);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
