@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.app.TableViewController;
 import com.app.dao.UserDaoImpl;
 import com.app.db.Conexion;
 import com.model.User;
@@ -15,6 +16,11 @@ import javafx.scene.image.ImageView;
 
 public class MainController implements Initializable{
 	
+    @FXML
+    private TableColumn<?, ?> tbName;
+
+    @FXML
+    private TableColumn<?, ?> tbType;
 
     @FXML
     private ImageView avatar;
@@ -70,13 +76,12 @@ public class MainController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-//		cmbList.getItems().addAll(
-//	            "jacob.smith@example.com",
-//	            "isabella.johnson@example.com",
-//	            "ethan.williams@example.com",
-//	            "emma.jones@example.com",
-//	            "michael.brown@example.com");
 		lblMemberOf.setText("Administrator");
+		
+		tbName = new TableColumn<>();
+		tbName.setText("one");
+		tbType = new TableColumn<>();
+		tbType.setText("two");
 	}
 	
 	
@@ -94,8 +99,21 @@ public class MainController implements Initializable{
 		u.setMemberOf("Administrator");
 		u.setWebPage(txtWeb.getText());
 		dimpl.addUser(u);
+		
+		clear();
 	}
 	
+	public void clear() {
+		txtDescription.setText(null);
+		txtDisplayName.setText(null);
+		txtEmail.setText(null);
+		txtFirst.setText(null);
+		txtInitials.setText(null);
+		txtLast.setText(null);
+		txtOffice.setText(null);
+		txtTelephone.setText(null);
+		txtWeb.setText(null);
+	}
 
 }
 

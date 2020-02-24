@@ -1,0 +1,18 @@
+package com.app.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.model.User;
+
+public class AppTest{
+
+	public static void main(String[] args) {	
+		UserDaoImpl d = new UserDaoImpl();
+
+		List<User>list = d.listar();
+		
+		System.out.println(list);
+	}
+
+}

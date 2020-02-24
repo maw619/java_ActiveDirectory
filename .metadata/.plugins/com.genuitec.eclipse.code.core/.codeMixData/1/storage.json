@@ -1,0 +1,14 @@
+{
+    "telemetry.machineId": "82c3b26aa1f315ebf0cf03ca21e2db034b5285ae2a9c7aa273613350f14709a6",
+    "openedPathsList": {
+        "workspaces3": [
+            {
+                "id": "2c1665ccb85850f0f8c424888c4b2115",
+                "configURIPath": "file:///c%3A/Users/Administrator/eclipse-workspace-java/.metadata/codemix.code-workspace"
+            }
+        ],
+        "files2": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#221a0f"
+}

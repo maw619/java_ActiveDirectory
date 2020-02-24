@@ -1,5 +1,8 @@
 package com.app.dao;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.app.db.Conexion;
 import com.model.User;
 
@@ -32,6 +35,34 @@ public class UserDaoImpl extends Conexion implements UserDAO{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public List<User> listar() {
+		String sql = "select * from users";
+		List<User>listar = null;
+		this.getConn();
+		try {
+			listar = new ArrayList<>();
+			PreparedStatement ps = this.conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+			User u = new User();
+			u.setUser_first_name(rs.getString("user_first_name"));
+			u.setUser_last_name(rs.getString("user_last_name"));
+			u.setUser_email(rs.getString("user_email"));
+			u.setUser_initials(rs.getString("user_initials"));
+			u.setDisplay_name(rs.getString("display_name"));
+			u.setDescription(rs.getString("description"));
+			u.setTelephone(rs.getString("telephone"));
+			u.setWebPage(rs.getString("webpage"));
+			u.setMemberOf(rs.getString("memberOf"));
+			listar.add(u);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return listar;
 	}
 
 }

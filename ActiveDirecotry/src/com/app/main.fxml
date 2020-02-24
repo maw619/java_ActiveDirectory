@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +17,7 @@
    <children>
       <TabPane layoutX="14.0" layoutY="45.0" prefHeight="555.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Untitled Tab 1">
+          <Tab text="User">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
@@ -55,12 +57,19 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Untitled Tab 1">
+            <Tab text="Table">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
                         <Line endX="304.0" layoutX="139.0" layoutY="120.0" startX="-100.0" strokeWidth="0.2" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" />
                         <Line endX="304.0" layoutX="135.0" layoutY="313.0" startX="-100.0" strokeWidth="0.2" />
+                        <TableView prefHeight="526.0" prefWidth="480.0">
+                          <columns>
+                            <TableColumn fx:id="tbName" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="tbType" prefWidth="75.0" text="Type" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TableView>
                      </children>
                   </AnchorPane>
                </content>
@@ -97,7 +106,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="btnOk" layoutX="14.0" layoutY="615.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="110.0" text="Button" />
+      <Button fx:id="btnOk" layoutX="14.0" layoutY="615.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="110.0" text="Ok" />
       <Button fx:id="btnCancel" layoutX="134.0" layoutY="615.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Button" />
       <Button layoutX="255.0" layoutY="615.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Button" />
       <Button layoutX="380.0" layoutY="615.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Button" />
